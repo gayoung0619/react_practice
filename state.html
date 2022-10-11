@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="ko">
+<body>
+<div id="wrap"></div>
+</body>
+<script crossorigin src="https://unpkg.com/react@17.0.2/umd/react.development.js"></script>
+<script crossorigin src="https://unpkg.com/react-dom@17.0.2/umd/react-dom.development.js"></script>
+<script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+<script type="text/babel">
+    // 쓰지 않는 방식 - 좋지 않은 방식 (UI가 바뀌어야 될때마다 리렌더링을 해야 되기때문)
+    const wrap = document.getElementById('wrap');
+    let counter = 0;
+    function countUp() {
+        counter = counter + 1;
+        render();
+    }
+    function render() {
+        ReactDOM.render( <Container />, wrap);
+    }
+    const Container = () =>(
+        <div>
+            <h3>Total clicks: {counter}</h3>
+            <button onClick={countUp}>button</button>
+        </div>
+    );
+    render();
+
+    //일반적으로 쓰는 방식
+</script>
+</html>

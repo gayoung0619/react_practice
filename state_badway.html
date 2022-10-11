@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <body>
+        <div id="wrap"></div>
+    </body>
+    <script crossorigin src="https://unpkg.com/react@17.0.2/umd/react.development.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@17.0.2/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <script type="text/babel">
+        //아래 방식은 변화된 데이터를 UI에 업데이트를 하고 싶을때마다 render라는 함수를 호출해야함
+        const wrap = document.getElementById('wrap');
+        let counter = 0;
+        function countUp () {
+            counter = counter + 1
+            render()
+        }
+        const Wrap = ()=> (
+            <div>
+                <h3> Total clicks :  {counter} </h3>
+                <button onClick={countUp}>click me!</button>
+            </div>
+        );
+        function render () {
+            ReactDOM.render(<Wrap />, wrap);
+        }
+        render();
+    </script>
+</html>

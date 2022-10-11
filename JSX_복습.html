@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <body>
+        <div id="wrap"></div>
+    </body>
+    <script crossorigin src="https://unpkg.com/react@17.0.2/umd/react.development.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@17.0.2/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <script type="text/babel">
+        const wrap = document.getElementById('wrap');
+        const Tit = () => (
+            <h3 className="title" onMouseEnter = {() => console.log('hahaha')}>
+                hello i'm h3
+            </h3>
+        );
+        const Button = () => (
+            <button type="button" className="btn" onClick= {()=> console.log('hohoho')}>
+                button
+            </button>
+        );
+        const Container = () =>(
+            <div>
+                <Tit />
+                <Button />
+                <Button />
+                <Button />
+                <Button />
+            </div>
+        );
+        ReactDOM.render( <Container />, wrap);
+    </script>
+</html>
